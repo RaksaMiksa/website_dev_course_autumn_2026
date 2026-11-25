@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional computer maintenance, troubleshooting and installation services. Contact us for help with your computer.">
+    <title>TechCare | Computer Services</title>
+
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #101c35;
+            color: white;
+            padding: 18px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #101c35, #1e3a5f);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: #dbeafe;
+        }
+
+        .button {
+            display: inline-block;
+            background: #38bdf8;
+            color: #082f49;
+            padding: 14px 27px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        /* SECTION SETTINGS */
+        section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #101c35;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            color: #64748b;
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: #101c35;
+        }
+
+        .service-card p {
+            color: #64748b;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: #eaf2fb;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #475569;
+            font-size: 17px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 23px;
+            margin-bottom: 20px;
+            color: #101c35;
+        }
+
+        .contact-info p {
+            margin-bottom: 18px;
+            color: #64748b;
+        }
+
+        .contact-info a {
+            color: #0284c7;
+        }
+
+        .contact-form {
+            background: #f5f7fb;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+            background: white;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid #38bdf8;
+            border-color: #0284c7;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #form-message {
+            margin-top: 15px;
+            color: #166534;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #101c35;
+            color: #cbd5e1;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 75px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">TechCare</a>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Professional Computer Services</h1>
+
+            <p>
+                Need help with your computer?
+                We provide reliable computer maintenance,
+                troubleshooting and installation services
+                to help keep your technology running smoothly.
+            </p>
+
+            <a href="#contact" class="button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+
+            <p class="section-description">
+                From computer maintenance to new installations,
+                we can help you with your technology needs.
+            </p>
+
+            <div class="services">
+
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+
+                    <h3>Computer Maintenance</h3>
+
+                    <p>
+                        Computer cleaning, performance improvements,
+                        software updates and general maintenance
+                        to keep your computer working properly.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+
+                    <h3>Computer Installation</h3>
+
+                    <p>
+                        Operating system installation, computer
+                        setup, driver installation and configuration
+                        of new computers.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+
+                    <h3>Troubleshooting</h3>
+
+                    <p>
+                        Help with computer errors, slow performance,
+                        software problems, connectivity issues
+                        and other technical difficulties.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+
+                <h2 class="section-title">About TechCare</h2>
+
+                <p>
+                    TechCare is a computer service concept focused
+                    on helping individuals and businesses with their
+                    everyday technology needs. Whether you need
+                    assistance installing a new computer, maintaining
+                    your existing equipment or solving a technical
+                    problem, we are here to help.
+                    Our goal is to make computer maintenance and
+                    installation simple, reliable and accessible.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+
+            <h2 class="section-title">Contact Us</h2>
+
+            <p class="section-description">
+                Have a question or need help with your computer?
+                Fill out the form below and tell us what you need.
+            </p>
+
+            <div class="contact-wrapper">
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <h3>Get in Touch</h3>
+
+                    <p>
+                        Send us a message describing your computer
+                        problem or the service you are looking for.
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:YOUR_EMAIL@example.com">
+                            YOUR_EMAIL@example.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+358401234567">
+                            +358 40 123 4567
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Service availability:</strong><br>
+                        By appointment.
+                    </p>
+
+                </div>
+
+                <!-- CONTACT FORM -->
+                <form class="contact-form" id="contactForm">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">What service do you need?</label>
+
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Computer Maintenance">
+                                Computer Maintenance
+                            </option>
+                            <option value="Computer Installation">
+                                Computer Installation
+                            </option>
+                            <option value="Troubleshooting">
+                                Troubleshooting
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="device">Computer or Device</label>
+
+                        <input
+                            type="text"
+                            id="device"
+                            name="device"
+                            placeholder="Example: HP laptop, desktop PC..."
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Describe Your Problem</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us what kind of help you need..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="button">
+                        Send Message
+                    </button>
+
+                    <p id="form-message" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; <span id="year"></span> TechCare.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Contact form functionality
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                // Replace this with your actual email address
+                const businessEmail = "YOUR_EMAIL@example.com";
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const service = document.getElementById("service").value;
+                const device = document.getElementById("device").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                if (!name || !email || !service || !message) {
+                    document.getElementById("form-message").textContent =
+                        "Please complete all required fields.";
+                    return;
+                }
+
+                const subject = encodeURIComponent(
+                    "New Computer Service Enquiry - " + service
+                );
+
+                const body = encodeURIComponent(
+                    "New customer enquiry\n\n" +
+                    "Name: " + name + "\n" +
+                    "Email: " + email + "\n" +
+                    "Requested service: " + service + "\n" +
+                    "Device: " + (device || "Not specified") + "\n\n" +
+                    "Message:\n" + message
+                );
+
+                const mailtoLink =
+                    "mailto:" + businessEmail +
+                    "?subject=" + subject +
+                    "&body=" + body;
+
+                document.getElementById("form-message").textContent =
+                    "Opening your email application...";
+
+                window.location.href = mailtoLink;
+            }
+        );
+    </script>
+
+</body>
+</html>
